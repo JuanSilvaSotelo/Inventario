@@ -1,5 +1,8 @@
-def agregar_producto(nombre):
-    """Agregar un producto a la lista de productos"""
-    producto = {"nombre": nombre}
-    productos.append(producto)
-    print(f"producto '{nombre}' agregado correctamente.")
+def agregar_producto(inventario, nombre, cantidad):
+    """Agregar un producto al inventario o actualizar su cantidad si ya existe."""
+    if nombre in inventario:
+        inventario[nombre] += cantidad
+        print(f"Cantidad de '{nombre}' actualizada a {inventario[nombre]}.")
+    else:
+        inventario[nombre] = cantidad
+        print(f"Producto '{nombre}' agregado con cantidad {cantidad}.")

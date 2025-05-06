@@ -1,8 +1,7 @@
-def eliminar_producto(nombre):
-    """eliminar un producto de la lista de productos"""
-    for producto in productos:
-        if producto["nombre"] == nombre:
-            productos.remove(producto)
-            print(f"producto '{nombre}' eliminado correctamente.")
-            return
-    print(f"producto '{nombre}' no encontrado en la lista.")
+def eliminar_producto(inventario, nombre):
+    """Eliminar un producto del inventario."""
+    if nombre in inventario:
+        del inventario[nombre]
+        print(f"Producto '{nombre}' eliminado correctamente.")
+    else:
+        print(f"Producto '{nombre}' no encontrado en el inventario.")
