@@ -1,4 +1,4 @@
-inventario: {
+inventario = {
     'manzanas': 50, 
     'naranjas': 30, 
     'peras': 20}
@@ -8,11 +8,12 @@ def mostrar_inventario(inventario):
     for producto, cantidad in inventario.items():
         print(f"{producto}: {cantidad} unidades")
 
-mostrar_inventario()
-
 def actualizar_inventario(inventario, producto, cantidad):
     if producto in inventario:
         inventario[producto] += cantidad
     else:
         inventario[producto] = cantidad
-actualizar_inventario('manzanas', 20)
+
+print(inventario)
+actualizar_inventario(inventario, 'manzanas', -70)
+mostrar_inventario(inventario)
